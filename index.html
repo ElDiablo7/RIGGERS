@@ -1,0 +1,538 @@
+<!--
+  Redbeard Rigging – Static brochure site
+
+  This HTML file is designed to be opened directly in a browser with no
+  external build tools. To preview locally, just double‑click this
+  index.html file or open it from your browser’s File → Open menu.
+
+  To deploy this site you can host the folder contents on any static
+  hosting platform (for example GitHub Pages, Netlify or Vercel). Make
+  sure to preserve the folder structure so that the CSS, JavaScript
+  and logo image paths remain valid.
+
+  All contact details in this template are placeholders. Replace
+  [PLACEHOLDER] values with real details when they become available.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#05070c" />
+  <title>Redbeard Rigging — Film, TV &amp; Commercial Production Rigging</title>
+  <meta name="description" content="Redbeard Rigging — experienced rigging crew delivering safe, efficient, on‑set solutions for film, TV and commercial productions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <a href="#main-content" class="skipLink">Skip to main content</a>
+  <!-- ===== Full-page image carousel background ===== -->
+  <div id="bgImageCarousel" aria-hidden="true"></div>
+  <!-- ===== Animated Starfield Background ===== -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  
+  <!-- ===== Electric chain hoist - moves up and down ===== -->
+    <div class="chainHoist chainHoist--left">
+      <svg class="chainHoist__svg" viewBox="0 0 120 800" preserveAspectRatio="xMidYMin meet">
+        <!-- Mounting track/rail at top -->
+        <rect x="40" y="0" width="40" height="8" fill="rgba(100,110,130,0.95)" rx="2"/>
+        <rect x="42" y="2" width="36" height="4" fill="rgba(80,90,110,0.9)"/>
+        <!-- Track mounting bolts -->
+        <circle cx="48" cy="4" r="1.5" fill="rgba(60,70,85,1)"/>
+        <circle cx="72" cy="4" r="1.5" fill="rgba(60,70,85,1)"/>
+        
+        <!-- Hoist motor body (moves with animation) -->
+        <g class="chainHoist__body">
+          <!-- Main motor housing -->
+          <rect x="25" y="12" width="70" height="45" fill="rgba(60,70,85,0.95)" rx="3" stroke="rgba(40,50,65,1)" stroke-width="1.5"/>
+          <!-- Motor top cap -->
+          <rect x="30" y="12" width="60" height="8" fill="rgba(80,90,105,0.9)" rx="3 3 0 0"/>
+          <!-- Motor vents/slots -->
+          <rect x="35" y="20" width="50" height="3" fill="rgba(40,50,65,0.8)" rx="1"/>
+          <rect x="35" y="26" width="50" height="3" fill="rgba(40,50,65,0.8)" rx="1"/>
+          <rect x="35" y="32" width="50" height="3" fill="rgba(40,50,65,0.8)" rx="1"/>
+          <!-- Control box on side -->
+          <rect x="85" y="22" width="12" height="20" fill="rgba(50,60,75,0.95)" rx="2" stroke="rgba(30,40,55,1)" stroke-width="1"/>
+          <!-- Control buttons/indicators -->
+          <circle cx="91" cy="28" r="2" fill="rgba(255,45,77,0.8)"/>
+          <circle cx="91" cy="34" r="2" fill="rgba(100,200,100,0.6)"/>
+          <!-- Electric cable connection -->
+          <path d="M 95 22 L 105 18 L 105 16" stroke="rgba(180,190,210,0.8)" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <!-- Chain spool/winch -->
+          <circle cx="60" cy="45" r="12" fill="rgba(70,80,95,0.9)" stroke="rgba(50,60,75,1)" stroke-width="1.5"/>
+          <circle cx="60" cy="45" r="8" fill="rgba(50,60,75,0.8)"/>
+          <!-- Chain spool center -->
+          <circle cx="60" cy="45" r="3" fill="rgba(30,40,55,1)"/>
+          <!-- Chain links hanging down -->
+          <g class="chainHoist__chain">
+            <!-- Chain links - many links for realistic extension -->
+            <rect x="57" y="57" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="67" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="77" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="87" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="97" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="107" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="117" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="127" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="137" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="147" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="157" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="167" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="177" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="187" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="197" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="207" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="217" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="227" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="237" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <rect x="57" y="247" width="6" height="8" fill="rgba(180,190,210,0.9)" rx="1" stroke="rgba(140,150,170,0.8)" stroke-width="0.5"/>
+            <!-- Hook at bottom -->
+            <path d="M 60 257 L 60 270 L 55 275 L 60 280 L 65 275 Z" fill="rgba(200,210,220,0.95)" stroke="rgba(160,170,190,0.8)" stroke-width="1"/>
+            <rect x="58" y="257" width="4" height="3" fill="rgba(180,190,210,0.9)"/>
+            
+            <!-- Film lamp hanging from hook - large, detailed, accurate -->
+            <g class="chainHoist__lamp">
+              <!-- Safety chain/strap from hook to lamp yoke -->
+              <path d="M 60 280 Q 60 285 60 292" stroke="rgba(140,150,170,0.7)" stroke-width="2" fill="none" stroke-linecap="round"/>
+              
+              <!-- Mounting yoke (U-shaped bracket) -->
+              <path d="M 50 292 L 50 298 L 70 298 L 70 292" fill="rgba(100,110,130,0.95)" stroke="rgba(80,90,110,1)" stroke-width="1.5" stroke-linejoin="round"/>
+              <rect x="48" y="292" width="24" height="3" fill="rgba(80,90,110,0.9)"/>
+              <!-- Yoke pivot bolts -->
+              <circle cx="52" cy="295" r="1.5" fill="rgba(60,70,85,1)"/>
+              <circle cx="68" cy="295" r="1.5" fill="rgba(60,70,85,1)"/>
+              
+              <!-- Lamp main housing (larger, more realistic) -->
+              <rect x="20" y="298" width="80" height="65" fill="rgba(45,50,60,0.95)" rx="3" stroke="rgba(30,35,45,1)" stroke-width="2"/>
+              <!-- Housing top section -->
+              <rect x="22" y="298" width="76" height="12" fill="rgba(55,60,70,0.9)" rx="3 3 0 0"/>
+              <!-- Cooling fins/heat sinks on sides -->
+              <rect x="20" y="305" width="3" height="55" fill="rgba(50,55,65,0.8)"/>
+              <rect x="97" y="305" width="3" height="55" fill="rgba(50,55,65,0.8)"/>
+              <!-- Fin details (horizontal lines) -->
+              <line x1="20" y1="310" x2="23" y2="310" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="20" y1="318" x2="23" y2="318" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="20" y1="326" x2="23" y2="326" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="20" y1="334" x2="23" y2="334" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="20" y1="342" x2="23" y2="342" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="20" y1="350" x2="23" y2="350" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="97" y1="310" x2="100" y2="310" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="97" y1="318" x2="100" y2="318" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="97" y1="326" x2="100" y2="326" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="97" y1="334" x2="100" y2="334" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="97" y1="342" x2="100" y2="342" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              <line x1="97" y1="350" x2="100" y2="350" stroke="rgba(40,45,55,0.6)" stroke-width="0.8"/>
+              
+              <!-- Lamp front face/reflector housing -->
+              <rect x="28" y="310" width="64" height="48" fill="rgba(50,55,65,0.9)" rx="2" stroke="rgba(40,45,55,1)" stroke-width="1.5"/>
+              <!-- Reflector inner surface -->
+              <ellipse cx="60" cy="334" rx="28" ry="20" fill="rgba(70,75,85,0.8)" stroke="rgba(60,65,75,0.6)" stroke-width="1"/>
+              <!-- Lamp lens/glass (large, realistic) -->
+              <ellipse cx="60" cy="334" rx="24" ry="17" fill="rgba(220,240,255,0.4)" stroke="rgba(200,220,240,0.6)" stroke-width="1.5"/>
+              <!-- Inner lens elements/reflections -->
+              <ellipse cx="60" cy="334" rx="18" ry="13" fill="rgba(255,255,255,0.2)"/>
+              <ellipse cx="60" cy="330" rx="12" ry="8" fill="rgba(255,255,255,0.15)"/>
+              <!-- Lens mounting ring -->
+              <ellipse cx="60" cy="334" rx="26" ry="19" fill="none" stroke="rgba(80,90,100,0.8)" stroke-width="1"/>
+              
+              <!-- Barn door mounting frame/ring around lens (behind doors) -->
+              <ellipse cx="60" cy="334" rx="32" ry="24" fill="none" stroke="rgba(60,65,75,0.8)" stroke-width="2"/>
+              <ellipse cx="60" cy="334" rx="30" ry="22" fill="none" stroke="rgba(70,75,85,0.6)" stroke-width="1"/>
+              
+              <!-- Barn doors (4 flaps - IN FRONT of lens, larger, more realistic, prominent) -->
+              <!-- Top barn door - front layer -->
+              <rect x="36" y="308" width="48" height="8" fill="rgba(55,60,70,0.98)" rx="1" stroke="rgba(45,50,60,1)" stroke-width="1.5"/>
+              <rect x="38" y="310" width="44" height="4" fill="rgba(65,70,80,0.95)"/>
+              <!-- Top door hinge/mounting -->
+              <rect x="58" y="308" width="4" height="3" fill="rgba(80,90,110,0.95)" rx="0.5"/>
+              <circle cx="60" cy="309.5" r="1" fill="rgba(60,70,85,1)"/>
+              <!-- Top door handle/grip -->
+              <rect x="42" y="310" width="36" height="1.5" fill="rgba(100,110,130,0.8)" rx="0.5"/>
+              
+              <!-- Bottom barn door - front layer -->
+              <rect x="36" y="350" width="48" height="8" fill="rgba(55,60,70,0.98)" rx="1" stroke="rgba(45,50,60,1)" stroke-width="1.5"/>
+              <rect x="38" y="352" width="44" height="4" fill="rgba(65,70,80,0.95)"/>
+              <!-- Bottom door hinge/mounting -->
+              <rect x="58" y="355" width="4" height="3" fill="rgba(80,90,110,0.95)" rx="0.5"/>
+              <circle cx="60" cy="356.5" r="1" fill="rgba(60,70,85,1)"/>
+              <!-- Bottom door handle/grip -->
+              <rect x="42" y="354.5" width="36" height="1.5" fill="rgba(100,110,130,0.8)" rx="0.5"/>
+              
+              <!-- Left barn door - front layer -->
+              <rect x="26" y="316" width="8" height="36" fill="rgba(55,60,70,0.98)" rx="1" stroke="rgba(45,50,60,1)" stroke-width="1.5"/>
+              <rect x="28" y="318" width="4" height="32" fill="rgba(65,70,80,0.95)"/>
+              <!-- Left door hinge/mounting -->
+              <rect x="26" y="332" width="3" height="4" fill="rgba(80,90,110,0.95)" rx="0.5"/>
+              <circle cx="27.5" cy="334" r="1" fill="rgba(60,70,85,1)"/>
+              <!-- Left door handle/grip -->
+              <rect x="27" y="320" width="1.5" height="28" fill="rgba(100,110,130,0.8)" rx="0.5"/>
+              
+              <!-- Right barn door - front layer -->
+              <rect x="86" y="316" width="8" height="36" fill="rgba(55,60,70,0.98)" rx="1" stroke="rgba(45,50,60,1)" stroke-width="1.5"/>
+              <rect x="88" y="318" width="4" height="32" fill="rgba(65,70,80,0.95)"/>
+              <!-- Right door hinge/mounting -->
+              <rect x="91" y="332" width="3" height="4" fill="rgba(80,90,110,0.95)" rx="0.5"/>
+              <circle cx="92.5" cy="334" r="1" fill="rgba(60,70,85,1)"/>
+              <!-- Right door handle/grip -->
+              <rect x="91.5" y="320" width="1.5" height="28" fill="rgba(100,110,130,0.8)" rx="0.5"/>
+              
+              <!-- Control panel on back/side -->
+              <rect x="25" y="320" width="8" height="38" fill="rgba(50,55,65,0.95)" rx="1" stroke="rgba(40,45,55,1)" stroke-width="1"/>
+              <!-- Control knobs/dials -->
+              <circle cx="29" cy="328" r="2.5" fill="rgba(100,110,130,0.9)" stroke="rgba(80,90,110,1)" stroke-width="0.8"/>
+              <circle cx="29" cy="328" r="1.2" fill="rgba(60,70,85,0.8)"/>
+              <circle cx="29" cy="338" r="2.5" fill="rgba(100,110,130,0.9)" stroke="rgba(80,90,110,1)" stroke-width="0.8"/>
+              <circle cx="29" cy="338" r="1.2" fill="rgba(60,70,85,0.8)"/>
+              <circle cx="29" cy="348" r="2.5" fill="rgba(100,110,130,0.9)" stroke="rgba(80,90,110,1)" stroke-width="0.8"/>
+              <circle cx="29" cy="348" r="1.2" fill="rgba(60,70,85,0.8)"/>
+              
+              <!-- Power input/cable connection -->
+              <rect x="87" y="325" width="10" height="14" fill="rgba(50,55,65,0.95)" rx="1.5" stroke="rgba(40,45,55,1)" stroke-width="1"/>
+              <!-- Power cable -->
+              <path d="M 97 332 L 110 332 L 110 330" stroke="rgba(180,190,210,0.8)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <!-- Cable connector detail -->
+              <circle cx="110" cy="330" r="2" fill="rgba(100,110,130,0.9)"/>
+              
+              <!-- Lamp brand/model label area -->
+              <rect x="35" y="360" width="50" height="6" fill="rgba(60,65,75,0.7)" rx="1"/>
+              <!-- Label text area (simulated) -->
+              <rect x="38" y="362" width="44" height="2" fill="rgba(120,130,150,0.5)"/>
+              
+              <!-- Mounting points/yoke connection -->
+              <circle cx="52" cy="298" r="3" fill="rgba(80,90,110,0.9)" stroke="rgba(60,70,85,1)" stroke-width="1"/>
+              <circle cx="68" cy="298" r="3" fill="rgba(80,90,110,0.9)" stroke="rgba(60,70,85,1)" stroke-width="1"/>
+              <!-- Yoke connection bolts -->
+              <circle cx="52" cy="298" r="1" fill="rgba(40,50,65,1)"/>
+              <circle cx="68" cy="298" r="1" fill="rgba(40,50,65,1)"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+  <!-- ===== Redbeard Rigging top banner ===== -->
+  <div class="riggerBanner" aria-hidden="true">
+    <div class="riggerBanner__pattern"></div>
+    <div class="wrap riggerBanner__inner">
+      <span class="riggerBanner__brand">Redbeard Rigging</span>
+      <span class="riggerBanner__divider" aria-hidden="true"></span>
+      <span class="riggerBanner__text">Set rigging for Film · TV · Commercial</span>
+    </div>
+  </div>
+
+  <!-- ===== Sticky navigation bar ===== -->
+  <header class="siteHeader">
+    <div class="wrap topbar">
+      <a class="brand" href="#main-content" aria-label="Redbeard home">
+        <div class="brandText">
+          <div class="brandName">Redbeard Rigging</div>
+          <div class="brandTag">Film • TV • Commercial production rigging</div>
+        </div>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Primary navigation">
+        <a class="navlink" href="#services">Services</a>
+        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#credits">Rigging Credits</a>
+        <a class="navlink" href="#services">Work</a>
+        <a class="navlink" href="#faq">FAQ</a>
+        <a class="navlink" href="#contact">Contact</a>
+      </nav>
+
+      <!-- Mobile menu toggle, visible on small screens -->
+      <button class="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">&#9776;</button>
+
+      <div class="cta">
+        <a class="btn" href="#contact">Get a quote</a>
+        <a class="btn primary" href="#services">See services</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Top logos video strip — loops above main body ===== -->
+  <div class="topLogosStrip" id="topLogosStrip" aria-hidden="true">
+    <div class="topLogosStrip__inner">
+      <div class="topLogosStrip__slide is-active" id="topLogosStripSlide"></div>
+    </div>
+  </div>
+
+  <main id="main-content" class="wrap">
+    <!-- ===== Hero banner ===== -->
+    <section class="hero" aria-label="Hero banner">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__left">
+          <span class="kicker"><span class="dot"></span> Available for bookings • UK‑based</span>
+          <h1 class="hero__title">
+            40+ years’ experience in <span class="accent">Film, TV &amp; Commercial</span> production rigging
+          </h1>
+          <p class="hero__body">
+            Redbeard is a production rigging team built for set life: tight
+            schedules, heavy loads, fast turnarounds and zero room for
+            mistakes. From motors and truss to points, grids and load planning —
+            we deliver clean, safe, paperwork‑ready work that crews can rely on.
+          </p>
+          <ul class="hero__bullets">
+            <li>On‑set rigging support for film, TV and commercial shoots</li>
+            <li>Truss, hoists, motors, points, grids &amp; load planning</li>
+            <li>Practical problem‑solving under pressure</li>
+            <li>Safety‑first approach, RAMS &amp; method statements</li>
+            <li>Crew supply for big builds and tight deadlines</li>
+          </ul>
+          <div class="hero__cta">
+            <a class="btn primary" href="#contact" aria-label="Request a quote">Request a quote</a>
+            <a class="btn ghost" href="#services" aria-label="View services">View work</a>
+            <a class="btn ghost" href="#faq" aria-label="Quick questions">Quick questions</a>
+          </div>
+          <p class="smallNote">Red Beard Rigging and Construction Ltd. (Company no. 12072836). Contact details being updated.</p>
+        </div>
+        <aside class="hero__right" aria-label="Quick stats and promise">
+          <div class="hero__feature-img">
+            <img src="assets/redbeard/IMG_5524.JPG" alt="Production rigging on set" width="400" height="267" loading="eager" decoding="async" />
+          </div>
+          <div class="panelTitle">
+            <div class="panelTitle__left">
+              <div class="panelTitle__h">Redbeard Snapshot</div>
+              <div class="panelTitle__p">Reliable, calm under pressure, and safety‑led.</div>
+            </div>
+            <div class="badge">On‑set ready</div>
+          </div>
+          <div class="statgrid">
+            <div class="stat"><strong>40+ years</strong><span>Experience in the industry</span></div>
+            <div class="stat"><strong>Film / TV</strong><span>Production environments</span></div>
+            <div class="stat"><strong>Load‑led</strong><span>Planning &amp; documentation</span></div>
+            <div class="stat"><strong>Fast</strong><span>Turnarounds when it counts</span></div>
+          </div>
+          <div class="promise">
+            <div class="promise__h">What you get</div>
+            <div class="promise__p">Straight communication, safe installs, clean handovers and a crew that understands how productions actually run.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section id="services" class="anchor">
+      <div class="section-title">
+        <div>
+          <h2>Services</h2>
+          <p>Core rigging support for film, TV and commercial production — from prep to wrap.</p>
+        </div>
+        <div class="section-note">Slots subject to schedule</div>
+      </div>
+      <div class="services-gallery">
+        <img src="assets/redbeard/IMG_1317.JPG" alt="Rigging and lighting setup" width="320" height="213" loading="lazy" />
+        <img src="assets/redbeard/IMG_1320.JPG" alt="Set rigging" width="320" height="213" loading="lazy" />
+        <img src="assets/redbeard/IMG_1324.JPG" alt="Production environment" width="320" height="213" loading="lazy" />
+        <img src="assets/redbeard/IMG_1330.JPG" alt="Rigging work" width="320" height="213" loading="lazy" />
+      </div>
+      <div class="tiles">
+        <article class="tile">
+          <div class="tile__img"><img src="assets/redbeard/IMG_0048.JPG" alt="" width="320" height="213" loading="lazy" /></div>
+          <h3>Production rigging support</h3>
+          <p>On‑set rigging crew for shoots and builds — quick response, safe execution, clean handover.</p>
+        </article>
+        <article class="tile">
+          <div class="tile__img"><img src="assets/redbeard/IMG_0311.JPG" alt="" width="320" height="213" loading="lazy" /></div>
+          <h3>Truss &amp; motor systems</h3>
+          <p>Build, hang and manage truss, hoists and motors for lighting, scenic, camera and special builds.</p>
+        </article>
+        <article class="tile">
+          <div class="tile__img"><img src="assets/redbeard/IMG_1112.JPG" alt="" width="320" height="213" loading="lazy" /></div>
+          <h3>Points, grids &amp; steelwork</h3>
+          <p>Point rigs, grid layouts, bridles and safe load paths planned for the reality of the space.</p>
+        </article>
+        <article class="tile">
+          <div class="tile__img"><img src="assets/redbeard/IMG_1134.JPG" alt="" width="320" height="213" loading="lazy" /></div>
+          <h3>Load planning &amp; documentation</h3>
+          <p>Load calculations, sign‑offs, method statements / RAMS and practical compliance for production needs.</p>
+        </article>
+        <article class="tile">
+          <div class="tile__img"><img src="assets/redbeard/IMG_1167.JPG" alt="" width="320" height="213" loading="lazy" /></div>
+          <h3>Bespoke problem solving</h3>
+          <p>When plans change (they always do), we find safe, workable solutions without drama.</p>
+        </article>
+        <article class="tile">
+          <div class="tile__img"><img src="assets/redbeard/IMG_1266.JPG" alt="" width="320" height="213" loading="lazy" /></div>
+          <h3>Crew supply</h3>
+          <p>Scale up fast for big builds and tight deadlines with experienced riggers who know set etiquette.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="anchor">
+      <div class="section-title">
+        <div>
+          <h2>About</h2>
+          <p>Experience‑led rigging, built around safety, communication and getting the job done right.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="card pad">
+          <div class="card__img card__img--about"><img src="assets/redbeard/IMG_5524.JPG" alt="Production rigging" width="400" height="267" loading="lazy" /></div>
+          <h3>The story</h3>
+          <p>Rigging on a live production isn’t just “putting metal in the air” — it’s managing risk, time, access, noise, change requests and tight schedules. Redbeard works with production, lighting, camera and art departments to keep installs safe, efficient and predictable.</p>
+          <ul class="list">
+            <li class="li"><span class="tick"></span><div><b>Safety‑first, always</b><span>Planned loads, safe access, correct hardware, and documented sign‑off.</span></div></li>
+            <li class="li"><span class="tick"></span><div><b>Set‑ready workflow</b><span>We know the pace — calm comms, quick pivots, tidy work areas.</span></div></li>
+            <li class="li"><span class="tick"></span><div><b>Production‑friendly</b><span>We work with departments, not against them — no ego, no chaos.</span></div></li>
+          </ul>
+        </div>
+        <div class="card pad">
+          <div class="card__img card__img--about"><img src="assets/redbeard/IMG_5624.JPG" alt="Rigging work" width="400" height="267" loading="lazy" /></div>
+          <h3>How it works</h3>
+          <p>Simple process: enquiry → brief → quote → booking → install → handover.</p>
+          <div class="steps">
+            <div class="li"><span class="stepDot a"></span><div><b>1) Brief</b><span>Tell us what you’re building, where, and when. Photos/plans help.</span></div></div>
+            <div class="li"><span class="stepDot b"></span><div><b>2) Plan</b><span>We confirm approach, access, kit and any paperwork needed.</span></div></div>
+            <div class="li"><span class="stepDot c"></span><div><b>3) Deliver</b><span>Safe install, tidy site, clear handover and wrap support if required.</span></div></div>
+          </div>
+          <div class="noteBox">
+            <div class="noteBox__h">Pricing note</div>
+            <div class="noteBox__p">Quotes are based on scope, access, schedule and load requirements. Final price confirmed after a quick survey/brief.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Rigging Credits ===== -->
+    <section id="credits" class="anchor">
+      <div class="section-title">
+        <div>
+          <h2>Rigging Credits</h2>
+          <p>Redbeard Rigging collaborates with experienced rigging professionals with decades of production experience.</p>
+        </div>
+      </div>
+      <div class="tiles tiles--credits">
+        <article class="tile tile--credit">
+          <div class="tile__img tile__img--credit"><img src="assets/redbeard/IMG_1289.JPG" alt="Ray Hills" width="320" height="213" loading="lazy" /></div>
+          <h3>Ray Hills</h3>
+          <p>Senior Production Rigger — extensive experience in film, television and commercial production rigging. Known for safe load planning, complex setups and on‑set problem solving.</p>
+        </article>
+        <article class="tile tile--credit">
+          <div class="tile__img tile__img--credit"><img src="assets/redbeard/IMG_1290.JPG" alt="Joe Hills" width="320" height="213" loading="lazy" /></div>
+          <h3>Joe Hills</h3>
+          <p>Electrical &amp; Production Rigger — skilled in specialised rigging, electrical rigging, systems integration and practical set solutions for dynamic production environments.</p>
+        </article>
+      </div>
+      <p class="smallNote">If official credits are provided we will list selected film/TV work here.</p>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="anchor">
+      <div class="section-title">
+        <div>
+          <h2>FAQ</h2>
+          <p>Quick answers that save time on set.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>What areas do you cover?</summary>
+          <p>Primarily the UK but we can travel subject to schedule and brief.</p>
+        </details>
+        <details>
+          <summary>How do quotes work?</summary>
+          <p>We base quotes on scope, access and schedule. Provide a brief and we will give an estimate; final price is confirmed after a survey/brief.</p>
+        </details>
+        <details>
+          <summary>Do you do site visits?</summary>
+          <p>Yes — site visits help clarify scope and ensure a safe and efficient install.</p>
+        </details>
+        <details>
+          <summary>Do you handle urgent jobs?</summary>
+          <p>Where the diary allows we can accommodate urgent builds. Contact us with details and we will let you know availability.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="anchor">
+      <div class="section-title">
+        <div>
+          <h2>Contact</h2>
+          <p>Front‑end placeholder form only — we’ll wire email/WhatsApp when details are confirmed.</p>
+        </div>
+      </div>
+      <div class="contact-gallery">
+        <img src="assets/redbeard/IMG_0048.JPG" alt="" width="240" height="160" loading="lazy" />
+        <img src="assets/redbeard/IMG_0311.JPG" alt="" width="240" height="160" loading="lazy" />
+        <img src="assets/redbeard/IMG_1112.JPG" alt="" width="240" height="160" loading="lazy" />
+        <img src="assets/redbeard/IMG_1167.JPG" alt="" width="240" height="160" loading="lazy" />
+        <img src="assets/redbeard/IMG_1288.JPG" alt="" width="240" height="160" loading="lazy" />
+      </div>
+      <div class="contact">
+        <div class="card pad">
+          <h3>Request a quote</h3>
+          <form id="quoteForm">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="🇬🇧 +44 7811 983 905" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="redbeardriggandcon@outlook.com" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="service">Service needed</label>
+              <select id="service" name="service">
+                <option>Production rigging support</option>
+                <option>Truss &amp; motors</option>
+                <option>Points / grids</option>
+                <option>Load planning</option>
+                <option>Crew supply</option>
+                <option>Bespoke solutions</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Details</label>
+              <textarea id="message" name="message" placeholder="What do you need, where, and when?"></textarea>
+            </div>
+            <button class="btn primary" type="submit">Send request</button>
+            <p class="smallNote" id="formNote">Placeholder form — this does not send anywhere yet.</p>
+          </form>
+        </div>
+        <div class="card pad">
+          <h3>Details</h3>
+          <div class="contactList">
+            <div class="li"><span class="iconBox"></span><div><b>Company</b><span class="muted">Red Beard Rigging and Construction Ltd.</span></div></div>
+            <div class="li"><span class="iconBox"></span><div><b>Company number</b><span class="muted">12072836</span></div></div>
+            <div class="li"><span class="iconBox"></span><div><b>Registered address</b><span class="muted">7 Breakspear Road North, Harefield Village, Uxbridge, Middlesex, UB9 6ND</span></div></div>
+            <div class="li"><span class="iconBox"></span><div><b>Phone</b><span class="muted">🇬🇧 +44 7811 983 905</span></div></div>
+            <div class="li"><span class="iconBox"></span><div><b>Email</b><span class="muted">redbeardriggandcon@outlook.com</span></div></div>
+            <div class="li"><span class="iconBox"></span><div><b>Service area</b><span class="muted">Worldwide</span></div></div>
+            <div class="li"><span class="iconBox"></span><div><b>Hours</b><span class="muted">9 a.m. – 5 p.m.</span></div></div>
+          </div>
+          <div class="noteBox noteBox--top">
+            <div class="noteBox__h">Emergency?</div>
+            <div class="noteBox__p">Same‑day slots subject to availability. If it’s urgent, send brief details and we’ll respond as fast as possible.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="siteFooter">
+      <div class="wrap footerInner">
+        <div>© <span id="year"></span> Red Beard Rigging and Construction Ltd. Company no. 12072836</div>
+        <div class="footerLinks">
+          <a class="navlink" href="#services">Services</a>
+          <a class="navlink" href="#about">About</a>
+          <a class="navlink" href="#contact">Contact</a>
+        </div>
+        <div class="footerCredit">Web design by <strong>GRACE‑X AI™</strong></div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
