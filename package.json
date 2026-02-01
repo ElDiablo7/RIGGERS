@@ -1,0 +1,12 @@
+{
+  "name": "riggers",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Red Beard Rigging and Construction Ltd. static website",
+  "scripts": {
+    "start": "serve -s . -l $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
