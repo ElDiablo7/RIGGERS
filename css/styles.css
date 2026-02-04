@@ -433,16 +433,102 @@ p {
   text-shadow: var(--text-raised-subtle);
 }
 .accent {
-  background: var(--red-gradient);
+  /* Cherry candy apple red - chrome 3D glistening effect */
+  background: linear-gradient(135deg, 
+    #ff1744 0%, 
+    #d32f2f 10%, 
+    #c41e3a 20%, 
+    #ff1744 30%, 
+    #ff4569 40%, 
+    #ff1744 50%, 
+    #d32f2f 60%, 
+    #c41e3a 70%, 
+    #ff1744 80%, 
+    #ff4569 90%, 
+    #ff1744 100%);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: none;
-  filter: drop-shadow(0 0 20px var(--neon-red-glow)) drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+  animation: chromeShine 4s ease-in-out infinite;
+  position: relative;
+  display: inline-block;
+  /* Multiple layered shadows for 3D chrome depth and glow */
+  filter: 
+    drop-shadow(0 2px 4px rgba(0,0,0,0.9)) 
+    drop-shadow(0 4px 8px rgba(0,0,0,0.7)) 
+    drop-shadow(0 0 12px rgba(255, 23, 68, 1)) 
+    drop-shadow(0 0 24px rgba(255, 23, 68, 0.9)) 
+    drop-shadow(0 0 36px rgba(255, 23, 68, 0.7))
+    drop-shadow(0 0 48px rgba(255, 23, 68, 0.5));
+}
+/* Glistening highlight overlay */
+.accent::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  background: linear-gradient(135deg, 
+    transparent 0%, 
+    transparent 20%, 
+    rgba(255, 255, 255, 0.6) 30%, 
+    rgba(255, 255, 255, 0.9) 35%, 
+    rgba(255, 255, 255, 0.5) 40%, 
+    transparent 50%, 
+    transparent 60%, 
+    rgba(255, 255, 255, 0.4) 70%, 
+    rgba(255, 255, 255, 0.8) 75%, 
+    rgba(255, 255, 255, 0.4) 80%, 
+    transparent 90%, 
+    transparent 100%);
+  background-size: 250% 250%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: chromeReflection 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+@keyframes chromeShine {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: 
+      drop-shadow(0 2px 4px rgba(0,0,0,0.9)) 
+      drop-shadow(0 4px 8px rgba(0,0,0,0.7)) 
+      drop-shadow(0 0 12px rgba(255, 23, 68, 1)) 
+      drop-shadow(0 0 24px rgba(255, 23, 68, 0.9)) 
+      drop-shadow(0 0 36px rgba(255, 23, 68, 0.7))
+      drop-shadow(0 0 48px rgba(255, 23, 68, 0.5));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: 
+      drop-shadow(0 2px 4px rgba(0,0,0,0.9)) 
+      drop-shadow(0 4px 8px rgba(0,0,0,0.7)) 
+      drop-shadow(0 0 18px rgba(255, 23, 68, 1)) 
+      drop-shadow(0 0 36px rgba(255, 23, 68, 1)) 
+      drop-shadow(0 0 54px rgba(255, 23, 68, 0.9))
+      drop-shadow(0 0 72px rgba(255, 23, 68, 0.7));
+  }
+}
+@keyframes chromeReflection {
+  0% {
+    background-position: -50% -50%;
+    opacity: 0.6;
+  }
+  50% {
+    background-position: 150% 50%;
+    opacity: 1;
+  }
+  100% {
+    background-position: 350% 150%;
+    opacity: 0.6;
+  }
 }
 .accent::selection {
   -webkit-text-fill-color: #fff;
-  background: var(--neon-red);
+  background: #ff1744;
 }
 
 /* Buttons — 3D raised, depth */
