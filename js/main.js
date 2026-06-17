@@ -28,9 +28,31 @@ class Starfield {
 
     this.resize();
     this.createStars();
+    this.preRenderStar();
     this.bindEvents();
     this.observeVisibility();
     this.animate();
+  }
+
+  preRenderStar() {
+    this.starCanvas = document.createElement('canvas');
+    this.starCanvas.width = 20;
+    this.starCanvas.height = 20;
+    const ctx = this.starCanvas.getContext('2d');
+    const gradient = ctx.createRadialGradient(10, 10, 0, 10, 10, 10);
+    gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+    gradient.addColorStop(0.3, 'rgba(200, 220, 255, 0.5)');
+    gradient.addColorStop(1, 'rgba(200, 220, 255, 0)');
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(10, 10, 10, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Draw solid core
+    ctx.beginPath();
+    ctx.arc(10, 10, 2, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+    ctx.fill();
   }
 
   observeVisibility() {
@@ -117,22 +139,10 @@ class Starfield {
       const twinkle = Math.sin(time * star.twinkleSpeed * 10 + star.twinklePhase) * 0.3 + 0.7;
       const alpha = Math.min(1, (1 - star.z / 1000) * star.brightness * twinkle);
 
-      // Draw star with glow effect
-      const gradient = this.ctx.createRadialGradient(x, y, 0, x, y, size * 3);
-      gradient.addColorStop(0, `rgba(255, 255, 255, ${alpha})`);
-      gradient.addColorStop(0.3, `rgba(200, 220, 255, ${alpha * 0.5})`);
-      gradient.addColorStop(1, 'rgba(200, 220, 255, 0)');
-
-      this.ctx.beginPath();
-      this.ctx.arc(x, y, size * 3, 0, Math.PI * 2);
-      this.ctx.fillStyle = gradient;
-      this.ctx.fill();
-
-      // Draw core
-      this.ctx.beginPath();
-      this.ctx.arc(x, y, size * 0.5, 0, Math.PI * 2);
-      this.ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
-      this.ctx.fill();
+      // Draw pre-rendered star
+      this.ctx.globalAlpha = alpha;
+      this.ctx.drawImage(this.starCanvas, x - size * 3, y - size * 3, size * 6, size * 6);
+      this.ctx.globalAlpha = 1.0;
     }
 
     this.raf = requestAnimationFrame(() => this.animate());

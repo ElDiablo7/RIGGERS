@@ -22,8 +22,8 @@
   --steel: #9cadc4;
   --neon-red: #ff2d4d;
   --neon-red-soft: #ff6b82;
-  --neon-red-glow: rgba(255, 45, 77, 0.55);
-  --neon-red-glow-strong: rgba(255, 45, 77, 0.75);
+  --neon-red-glow: rgba(255, 45, 77, 0.35);
+  --neon-red-glow-strong: rgba(255, 45, 77, 0.50);
   --heading-gradient: linear-gradient(135deg, #ffffff 0%, #e8eeff 40%, #c8d8ff 100%);
   --accent-gradient: linear-gradient(135deg, #5de6f0 0%, #00d4e0 50%, #00a8b8 100%);
   --red-gradient: linear-gradient(135deg, #ff6b82 0%, #ff2d4d 50%, #e01e3c 100%);
@@ -109,9 +109,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  transform: scale(0.2);
+  transform: scale(0.2) translateZ(0);
   z-index: 0;
   pointer-events: none;
+  will-change: transform, opacity, filter;
 }
 /* Red dust overlay (visible during disintegration) */
 #bgImageCarousel .bgImageCarousel__slide::before {
@@ -144,9 +145,10 @@ body {
 #bgImageCarousel .bgImageCarousel__slide.is-active.is-entering {
   animation: bgCarouselApproach 2.5s ease-out forwards;
   z-index: 1;
+  will-change: transform, opacity;
 }
 #bgImageCarousel .bgImageCarousel__slide.is-active {
-  transform: scale(1);
+  transform: scale(1) translateZ(0);
   opacity: 1;
   z-index: 1;
 }
@@ -161,11 +163,11 @@ body {
 @keyframes bgCarouselApproach {
   from {
     opacity: 0;
-    transform: scale(0.2);
+    transform: scale(0.2) translateZ(0);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
   }
 }
 @keyframes bgCarouselDisintegrate {
@@ -233,6 +235,7 @@ body {
   animation: chainExtendDown 24s ease-in-out infinite;
   transform-origin: 60px 0%;
   overflow: visible;
+  will-change: transform, opacity;
 }
 @keyframes chainExtendDown {
   0% {
@@ -261,6 +264,7 @@ body {
   filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 12px rgba(255, 255, 200, 0.25));
   animation: lampSwayOnly 4s ease-in-out infinite;
   transform-origin: 60px 292px;
+  will-change: transform;
 }
 @keyframes lampSwayOnly {
   0%, 100% {
@@ -454,14 +458,13 @@ p {
   animation: chromeShine 4s ease-in-out infinite;
   position: relative;
   display: inline-block;
-  /* Multiple layered shadows for 3D chrome depth and glow */
+  /* Multiple layered shadows for 3D chrome depth and glow — reduced for performance */
   filter: 
     drop-shadow(0 2px 4px rgba(0,0,0,0.9)) 
     drop-shadow(0 4px 8px rgba(0,0,0,0.7)) 
-    drop-shadow(0 0 12px rgba(255, 23, 68, 1)) 
-    drop-shadow(0 0 24px rgba(255, 23, 68, 0.9)) 
-    drop-shadow(0 0 36px rgba(255, 23, 68, 0.7))
-    drop-shadow(0 0 48px rgba(255, 23, 68, 0.5));
+    drop-shadow(0 0 12px rgba(255, 23, 68, 0.7)) 
+    drop-shadow(0 0 24px rgba(255, 23, 68, 0.4));
+  will-change: filter, background-position;
 }
 /* Glistening highlight overlay */
 .accent::before {
@@ -496,20 +499,16 @@ p {
     filter: 
       drop-shadow(0 2px 4px rgba(0,0,0,0.9)) 
       drop-shadow(0 4px 8px rgba(0,0,0,0.7)) 
-      drop-shadow(0 0 12px rgba(255, 23, 68, 1)) 
-      drop-shadow(0 0 24px rgba(255, 23, 68, 0.9)) 
-      drop-shadow(0 0 36px rgba(255, 23, 68, 0.7))
-      drop-shadow(0 0 48px rgba(255, 23, 68, 0.5));
+      drop-shadow(0 0 12px rgba(255, 23, 68, 0.7)) 
+      drop-shadow(0 0 24px rgba(255, 23, 68, 0.4));
   }
   50% {
     background-position: 100% 50%;
     filter: 
       drop-shadow(0 2px 4px rgba(0,0,0,0.9)) 
       drop-shadow(0 4px 8px rgba(0,0,0,0.7)) 
-      drop-shadow(0 0 18px rgba(255, 23, 68, 1)) 
-      drop-shadow(0 0 36px rgba(255, 23, 68, 1)) 
-      drop-shadow(0 0 54px rgba(255, 23, 68, 0.9))
-      drop-shadow(0 0 72px rgba(255, 23, 68, 0.7));
+      drop-shadow(0 0 16px rgba(255, 23, 68, 0.8)) 
+      drop-shadow(0 0 32px rgba(255, 23, 68, 0.5));
   }
 }
 @keyframes chromeReflection {
@@ -932,11 +931,11 @@ summary:focus-visible {
   height: 420px;
   background:
     radial-gradient(480px 240px at 18% 18%, var(--accent-dim) 0%, transparent 50%),
-    radial-gradient(400px 200px at 85% 15%, var(--neon-red-glow) 0%, transparent 50%),
+    radial-gradient(400px 200px at 85% 15%, rgba(255, 45, 77, 0.15) 0%, transparent 50%),
     radial-gradient(500px 240px at 80% 10%, rgba(139, 156, 173, 0.06) 0%, transparent 55%);
   filter: blur(48px);
   pointer-events: none;
-  opacity: 0.92;
+  opacity: 0.72;
 }
 .hero__inner {
   position: relative;
